@@ -6,7 +6,8 @@ import com.taquente.roompresentation.model.Stats
 import java.util.*
 
 @Entity(tableName = "Players",
-        indices = [Index(value = ["number", "teamId"], unique = true)],
+        indices = [Index(value = ["number", "teamId"], unique = true),
+                   Index(value = ["teamId"])],
         foreignKeys = [ForeignKey(entity = Team::class, parentColumns = ["id"], childColumns = ["teamId"], onDelete = CASCADE)])
 data class Player(@PrimaryKey(autoGenerate = true) val id: Int,
                   val number: Int,

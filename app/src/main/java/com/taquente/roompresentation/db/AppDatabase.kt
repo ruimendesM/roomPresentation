@@ -13,7 +13,7 @@ import com.taquente.roompresentation.db.entities.Sponsor
 import com.taquente.roompresentation.db.entities.Team
 import com.taquente.roompresentation.db.entities.TeamSponsorJoin
 
-@Database(entities = [Player::class, Team::class, Sponsor::class, TeamSponsorJoin::class], version = 1)
+@Database(entities = [Player::class, Team::class, Sponsor::class, TeamSponsorJoin::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun playersDao(): PlayersDao
